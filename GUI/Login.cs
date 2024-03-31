@@ -55,6 +55,8 @@ namespace QuanLyLichDay
                 if (VerifyEmail(otp))
                 {
                     fHomePage fHomePage = new fHomePage();
+                    fDangNhap fDangNhap = new fDangNhap();
+                    fDangNhap.Hide();
                     fHomePage.Show();
                 }
                 else
