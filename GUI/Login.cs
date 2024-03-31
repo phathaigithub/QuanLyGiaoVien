@@ -100,6 +100,8 @@ namespace QuanLyLichDay
 
         private void btnGetOTP_Click(object sender, EventArgs e)
         {
+            try
+            {
             Random rd = new Random();
             gmailOTP = rd.Next(100000, 1000000);
             string mailSender = "dbmanagerteam@gmail.com";
@@ -122,6 +124,12 @@ namespace QuanLyLichDay
             stmpClient.Send(message);
 
             MessageBox.Show("OTP đã được gửi qua email");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Email không hợp lệ");
+            }
+
         }
         
     }
