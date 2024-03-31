@@ -1,0 +1,12 @@
+CREATE DATABASE QUANLYLICHDAY
+
+USE QUANLYLICHDAY
+
+CREATE TABLE DangNhap(
+	email varchar(30),
+	password varchar(20)
+)
+
+INSERT INTO DangNhap VALUES('admin','123')
+INSERT INTO DangNhap VALUES ('phathai2902@gmail.com','123')
+SELECT * FROM DangNhap
