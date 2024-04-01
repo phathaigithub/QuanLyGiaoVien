@@ -278,7 +278,7 @@
             this.lb_ChuNhat.Location = new System.Drawing.Point(810, 0);
             this.lb_ChuNhat.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.lb_ChuNhat.Name = "lb_ChuNhat";
-            this.lb_ChuNhat.Size = new System.Drawing.Size(135, 40);
+            this.lb_ChuNhat.Size = new System.Drawing.Size(128, 40);
             this.lb_ChuNhat.TabIndex = 6;
             this.lb_ChuNhat.Text = "Chủ nhật\r\n(07/04)";
             this.lb_ChuNhat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

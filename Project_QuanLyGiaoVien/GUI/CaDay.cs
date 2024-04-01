@@ -92,7 +92,7 @@ namespace QuanLyLichDay
             {
                 case 0:
                     {
-                        this.ForeColor = Color.Black;
+                        this.lb_ClassName.ForeColor = Color.Black;
                         this.BackColor = Color.LightGray;
                         this.status = "Chưa dạy";
                         break;
@@ -118,6 +118,7 @@ namespace QuanLyLichDay
         {
 
             CaDayDAO.Instance.updateStatusCaDay(className, status, shift, day, account.Username);
+            
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
