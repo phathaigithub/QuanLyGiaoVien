@@ -23,7 +23,7 @@ namespace QuanLyLichDay.GUI
         public ucXemLichDay()
         {
             InitializeComponent();
-            
+           
         }
         public void loadWeek(DateTime day)
         { 
@@ -47,21 +47,21 @@ namespace QuanLyLichDay.GUI
             clearFlpBody();
             for(int i=1; i <= 7; i++)
             {
-                for (int j = 1; j <= 5; j++)
+                for (int shift = 1; shift <= 5; shift++)
                 {
                     bool isAdd = false;
                     foreach (Class c in list)
                     {
-                        if (firstDay.ToString("dd/MM").Equals(c.Day.ToString("dd/MM")) && c.Shift == j)
+                        if (firstDay.ToString("dd/MM").Equals(c.Day.ToString("dd/MM")) && c.Shift == shift)
                         {
-                            flp_Body.Controls.Add(new CaDay(c));
+                            flp_Body.Controls.Add(new CaDay(c, this.account));
                             isAdd = true;
                             break;
                         }
                     }
                     if (isAdd)
                         continue;
-                    flp_Body.Controls.Add(new CaDay(j));
+                    flp_Body.Controls.Add(new CaDay(firstDay, shift, this.account));
                 }
                 firstDay = firstDay.AddDays(1);
             }

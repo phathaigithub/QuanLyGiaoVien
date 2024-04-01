@@ -50,7 +50,7 @@ namespace Project_DBManager.DAO
             }
             return data;
         }
-        public int ExecuteNonQuery(string query, string[] para = null)
+        public int ExecuteNonQuery(string query, object[] para = null)
         {
             using (SqlConnection connect = new SqlConnection(connectString))
             {
@@ -71,7 +71,6 @@ namespace Project_DBManager.DAO
                     }
 
                 }
-
                 return cmd.ExecuteNonQuery();
             }
         }

@@ -17,12 +17,13 @@ namespace QuanLyLichDay.DAO
     public class AccountDAO
     {
         private static AccountDAO instance;
-
+        private static Account acc;
         public static AccountDAO Instance
         {
             get => instance == null ? new AccountDAO() : instance;
             set => instance = value;
         }
+        public static Account Acc { get => acc; set => acc = value; }
 
         private AccountDAO() { }
 

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using QuanLyLichDay.GUI;
 using System.Net.Mail;
 using System.Net;
+using QuanLyLichDay.DTO;
 
 namespace QuanLyLichDay
 {
@@ -69,6 +70,7 @@ namespace QuanLyLichDay
                 //if (authForm.IsChecked)
                 //{
                 MainForm mainForm = new MainForm(AccountDAO.Instance.getAccountByUsername(username));
+                AccountDAO.Acc = AccountDAO.Instance.getAccountByUsername(username);
                 this.Hide();
                 mainForm.ShowDialog();
                 this.Close();

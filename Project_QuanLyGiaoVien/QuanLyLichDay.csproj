@@ -153,6 +153,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CaDayDAO.cs" />
     <Compile Include="GUI\CaDay.cs">
       <SubType>UserControl</SubType>
     </Compile>
