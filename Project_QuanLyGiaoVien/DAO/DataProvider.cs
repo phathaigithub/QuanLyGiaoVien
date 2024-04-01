@@ -1,127 +1,80 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace QuanLyLichDay.DAO
+using System.Data.SqlClient;
+using System.Data;
+using System.Windows.Forms;
+using System.Drawing.Text;
+namespace Project_DBManager.DAO
 {
     public class DataProvider
     {
+        private readonly string connectString = "Data Source =.\\sqlexpress; Initial Catalog = QUANLYLICHDAY; Integrated Security = True";
         private static DataProvider instance;
 
-        public static DataProvider Instance 
-        { 
-            get => instance == null ? new DataProvider() : instance; 
-            private set => instance = value; 
-        } 
+        public static DataProvider Instance
+        {
+            get { if (instance == null) instance = new DataProvider(); return instance; }
+            private set { DataProvider.instance = value; }
+        }
         private DataProvider() { }
 
-        string conStr = "Data Source = .\\sqlexpress;Initial Catalog = QUANLYLICHDAY; Integrated Security = True";
-
-
-        public DataTable ExcuteQuery(string query, object[] para = null)
+        public DataTable ExecuteQuery(string query, object[] para = null)
         {
-
-            DataTable dt = new DataTable();
-
-            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            DataTable data = new DataTable();
+            using (SqlConnection connect = new SqlConnection(connectString))
             {
-
-                sqlCon.Open();
-
-                SqlCommand command = new SqlCommand(query, sqlCon);
-
+                connect.Open();
+                SqlCommand cmd = new SqlCommand(query, connect);
                 if (para != null)
                 {
-                    string[] listPara = query.Split(' ');
                     int i = 0;
-                    foreach (string item in listPara) 
-                    { 
-                        if (item.Contains('@'))
-                        {
-                            command.Parameters.AddWithValue(item, para[i]);
-                            i++;
-                        }
-                    }
-                }
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                adapter.Fill(dt);
-
-                sqlCon.Close();
-
-            }
-
-            return dt;
-        }
-        public int ExcuteNonQuery(string query, object[] para = null)
-        {
-
-            int data = 0;
-
-            using (SqlConnection sqlCon = new SqlConnection(conStr))
-            {
-
-                sqlCon.Open();
-
-                SqlCommand command = new SqlCommand(query, sqlCon);
-
-                if (para != null)
-                {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listPara)
+                    foreach (string item in query.Split(' '))
                     {
-                        if (item.Contains('@'))
+
+                        if (item.Contains("@"))
                         {
-                            command.Parameters.AddWithValue(item, para[i]);
-                            i++;
+
+                            item.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
+                            cmd.Parameters.AddWithValue(item, para[i++]);
                         }
                     }
+
                 }
-
-                data = command.ExecuteNonQuery();
-
-                sqlCon.Close();
-
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(data);
+                connect.Close();
             }
             return data;
         }
-        public object ExcuteScalar(string query, object[] para = null)
+        public int ExecuteNonQuery(string query, string[] para = null)
         {
-            object data = 0;
-
-            using (SqlConnection sqlCon = new SqlConnection(conStr))
+            using (SqlConnection connect = new SqlConnection(connectString))
             {
-
-                sqlCon.Open();
-
-                SqlCommand command = new SqlCommand(query, sqlCon);
-
+                connect.Open();
+                SqlCommand cmd = new SqlCommand(query, connect);
                 if (para != null)
                 {
-                    string[] listPara = query.Split(' ');
                     int i = 0;
-                    foreach (string item in listPara)
+                    foreach (string item in query.Split(' '))
                     {
-                        if (item.Contains('@'))
+
+                        if (item.Contains("@"))
                         {
-                            command.Parameters.AddWithValue(item, para[i]);
-                            i++;
+
+                            item.Replace(",", ""); // Dành cho trường hợp tham số bị dính giấu ,
+                            cmd.Parameters.AddWithValue(item, para[i++]);
                         }
                     }
+
                 }
 
-                data = command.ExecuteScalar();
-
-                sqlCon.Close();
-
+                return cmd.ExecuteNonQuery();
             }
-            return data;
         }
     }
+
 }

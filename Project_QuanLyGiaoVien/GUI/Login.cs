@@ -15,14 +15,13 @@ using System.Net;
 
 namespace QuanLyLichDay
 {
-    public partial class fDangNhap : Form
+    public partial class LoginForm : Form
     {
-        public fDangNhap()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        int gmailOTP;
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
@@ -37,52 +36,6 @@ namespace QuanLyLichDay
         {
 
         }
-
-        
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-            string email = txtEmail.Text;
-            string matkhau = txtMatKhau.Text;
-            string otp = txtOTP.Text;
-            
-            if (email == "" || matkhau == "")
-            {
-                MessageBox.Show("Email hoặc mật khẩu không được để trống");
-                return;
-            }
-            if (DangNhap(email, matkhau) )
-            {
-                if (VerifyEmail(otp))
-                {
-                    fHomePage fHomePage = new fHomePage();
-                    fDangNhap fDangNhap = new fDangNhap();
-                    fDangNhap.Hide();
-                    fHomePage.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Otp không hợp lệ");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
-            }
-            
-        }
-        private bool VerifyEmail(string otp)
-        {
-            if (gmailOTP.ToString().Equals(otp))
-            {
-                return true;
-            }
-            return false;
-        }
-        private bool DangNhap(string email, string matkhau)
-        {
-            return AccountDAO.Instance.Login(email, matkhau);
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -98,39 +51,47 @@ namespace QuanLyLichDay
 
         }
 
-        private void btnGetOTP_Click(object sender, EventArgs e)
+        private void bt_login_Click(object sender, EventArgs e)
         {
-            try
+            string username = tb_Username.Text;
+            string password = tb_Password.Text;
+
+
+            if (username == "" || password == "")
             {
-            Random rd = new Random();
-            gmailOTP = rd.Next(100000, 1000000);
-            string mailSender = "dbmanagerteam@gmail.com";
-            string fromPassword = "xvlsxthynqyrdvut";
-            string mailReceiver = txtEmail.Text;
-            MailMessage message = new MailMessage();
-            message.From = new MailAddress(mailSender);
-            message.Subject = "OTP Verify";
-            message.To.Add(new MailAddress(mailReceiver));
-            message.Body = "<html><body>" + gmailOTP + " </body></html>";
-            message.IsBodyHtml = true;
-
-            var stmpClient = new SmtpClient("smtp.gmail.com")
-            {
-                Port = 587,
-                Credentials = new NetworkCredential(mailSender, fromPassword),
-                EnableSsl = true,
-            };
-
-            stmpClient.Send(message);
-
-            MessageBox.Show("OTP đã được gửi qua email");
+                MessageBox.Show("Email hoặc mật khẩu không được để trống");
+                return;
             }
-            catch (Exception ex)
+            if (AccountDAO.Instance.checkLogin(username, password))
             {
-                MessageBox.Show("Email không hợp lệ");
+                OTPAuthorizeForm authForm = new OTPAuthorizeForm(username);
+                authForm.ShowDialog();
+                if (authForm.IsChecked)
+                {
+                    MainForm mainForm = new MainForm();
+                    this.Hide();
+                    mainForm.ShowDialog();
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Xác nhận không thành công");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
             }
 
         }
-        
+
+        private void tb_Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                bt_login.PerformClick();
+            }
+        }
     }
 }

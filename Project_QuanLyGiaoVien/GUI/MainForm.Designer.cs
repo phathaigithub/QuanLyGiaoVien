@@ -1,6 +1,6 @@
 ﻿namespace QuanLyLichDay.GUI
 {
-    partial class fHomePage
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.

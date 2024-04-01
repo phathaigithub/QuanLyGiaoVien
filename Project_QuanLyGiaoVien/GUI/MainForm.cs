@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyLichDay.GUI
 {
-    public partial class fHomePage : Form
+    public partial class MainForm : Form
     {
-        public fHomePage()
+        public MainForm()
         {
             InitializeComponent();
         }

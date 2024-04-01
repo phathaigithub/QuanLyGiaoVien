@@ -8,6 +8,8 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyLichDay.GUI;
+using Project_DBManager.DAO;
+using Microsoft.Identity.Client;
 
 namespace QuanLyLichDay.DAO
 {
@@ -23,15 +25,20 @@ namespace QuanLyLichDay.DAO
 
         private AccountDAO() { }
 
-        public bool Login(string email, string password)
+        public bool checkLogin(string username, string password)
         {
-            string query = "SELECT * FROM DangNhap WHERE email = '" + email +"' AND password ='"+ password+ "'";
+            string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
 
-            DataTable result = DataProvider.Instance.ExcuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
 
             return result.Rows.Count > 0;
         }
-
+        public string getEmailByUsername(string username)
+        {
+            string query = "SELECT User_Email FROM Users Where Username = @Username";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            return result.Rows[0]["User_Email"].ToString(); 
+        }
         
         
     }
