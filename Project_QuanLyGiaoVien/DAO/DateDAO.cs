@@ -17,17 +17,21 @@ namespace QuanLyLichDay.DAO
         {
             return day.ToString("HH:MM:ss");
         }
-        public DateTime mondayOfWeek(DateTime day)
+        public DateTime firstDayOfWeek(DateTime day)
         {
-           
+
             int daysUntilMonday = ((int)DayOfWeek.Monday - (int)day.DayOfWeek + 7) % 7;
-            return day.AddDays(-daysUntilMonday);
+            DateTime firstDay = day.AddDays(-daysUntilMonday);
+            firstDay = firstDay.AddHours(-1 * firstDay.Hour);
+            return firstDay;
             
         }
-        public DateTime sundayOfWeek(DateTime day)
+        public DateTime lastDayOfWeek(DateTime day)
         {
             int daysUntilSunday = ((int)DayOfWeek.Sunday - (int)day.DayOfWeek + 7) % 7;
-            return day.AddDays(daysUntilSunday);
+            DateTime lastDay = day.AddDays(daysUntilSunday);
+            lastDay = lastDay.AddHours(23 - lastDay.Hour);
+            return lastDay;
         }
     }
 }

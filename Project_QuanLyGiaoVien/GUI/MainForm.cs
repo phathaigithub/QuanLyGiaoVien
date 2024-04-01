@@ -19,11 +19,17 @@ namespace QuanLyLichDay.GUI
         {
             InitializeComponent();
             this.account = account;
+            loadUcXemLichDay();
         }
 
         private void xemLịchDạyToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        private void loadUcXemLichDay()
+        {
+            ucXemLichDay1.Account = account;
+            ucXemLichDay1.loadWeek(ucXemLichDay1.CurrentWeek);
         }
     }
 }

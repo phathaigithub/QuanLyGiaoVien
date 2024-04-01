@@ -153,6 +153,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CaDay.Designer.cs">
+      <DependentUpon>CaDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -185,6 +191,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CaDay.resx">
+      <DependentUpon>CaDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

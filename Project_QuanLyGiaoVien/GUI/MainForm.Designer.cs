@@ -51,7 +51,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1101, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -105,17 +105,19 @@
             // 
             // ucXemLichDay1
             // 
+            this.ucXemLichDay1.Account = null;
             this.ucXemLichDay1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.ucXemLichDay1.CurrentWeek = new System.DateTime(2024, 4, 1, 19, 14, 51, 335);
             this.ucXemLichDay1.Location = new System.Drawing.Point(0, 27);
             this.ucXemLichDay1.Name = "ucXemLichDay1";
-            this.ucXemLichDay1.Size = new System.Drawing.Size(944, 606);
+            this.ucXemLichDay1.Size = new System.Drawing.Size(1100, 606);
             this.ucXemLichDay1.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 633);
+            this.ClientSize = new System.Drawing.Size(1101, 633);
             this.Controls.Add(this.ucXemLichDay1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
