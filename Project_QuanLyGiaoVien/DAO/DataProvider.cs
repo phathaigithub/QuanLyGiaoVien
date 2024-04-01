@@ -19,7 +19,7 @@ namespace QuanLyLichDay.DAO
         } 
         private DataProvider() { }
 
-        string conStr = "Data Source = LAPTOP-LQ73NH42\\SQLEXPRESS01;Initial Catalog = QUANLYLICHDAY; Integrated Security = True";
+        string conStr = "Data Source = .\\sqlexpress;Initial Catalog = QUANLYLICHDAY; Integrated Security = True";
 
 
         public DataTable ExcuteQuery(string query, object[] para = null)
