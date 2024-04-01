@@ -30,5 +30,21 @@ namespace QuanLyLichDay.DAO
             }
             return classes;
         }
+
+        public double getNumOfShift(string username)
+        {
+            string query = "SELECT COUNT(Shift_ID) AS 'COUNT' FROM Users U, Class WHERE U.User_ID = Class.User_ID " +
+                "and U.Username = @Username and Class.Status = N'Đã dạy' and MONTH(GETDATE()) = MONTH(DayOfClass) " +
+                "and YEAR(GETDATE()) = YEAR(DayOfClass)";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            if(result != null)
+            {
+                double numOfShift = Convert.ToDouble(result.Rows[0]["COUNT"].ToString());
+                return numOfShift;
+            }
+            return 0;
+        }
+
+
     }
 }

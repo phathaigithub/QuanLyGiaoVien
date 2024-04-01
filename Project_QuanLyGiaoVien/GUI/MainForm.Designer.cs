@@ -37,6 +37,7 @@
             this.tínhToánTiềnLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêBáoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ucXemLichDay1 = new QuanLyLichDay.GUI.ucXemLichDay();
+            this.ucTinhTienLuong1 = new QuanLyLichDay.ucTinhTienLuong();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +97,7 @@
             this.tínhToánTiềnLươngToolStripMenuItem.Name = "tínhToánTiềnLươngToolStripMenuItem";
             this.tínhToánTiềnLươngToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
             this.tínhToánTiềnLươngToolStripMenuItem.Text = "Tính toán tiền lương";
+            this.tínhToánTiềnLươngToolStripMenuItem.Click += new System.EventHandler(this.tínhToánTiềnLươngToolStripMenuItem_Click);
             // 
             // thốngKêBáoCáoToolStripMenuItem
             // 
@@ -112,12 +114,22 @@
             this.ucXemLichDay1.Name = "ucXemLichDay1";
             this.ucXemLichDay1.Size = new System.Drawing.Size(1100, 606);
             this.ucXemLichDay1.TabIndex = 1;
+            this.ucXemLichDay1.Load += new System.EventHandler(this.ucXemLichDay1_Load);
+            // 
+            // ucTinhTienLuong1
+            // 
+            this.ucTinhTienLuong1.Account = null;
+            this.ucTinhTienLuong1.Location = new System.Drawing.Point(0, 27);
+            this.ucTinhTienLuong1.Name = "ucTinhTienLuong1";
+            this.ucTinhTienLuong1.Size = new System.Drawing.Size(1100, 606);
+            this.ucTinhTienLuong1.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 633);
+            this.Controls.Add(this.ucTinhTienLuong1);
             this.Controls.Add(this.ucXemLichDay1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -143,5 +155,6 @@
         private System.Windows.Forms.ToolStripMenuItem thốngKêBáoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemLịchDạyToolStripMenuItem;
         private ucXemLichDay ucXemLichDay1;
+        private ucTinhTienLuong ucTinhTienLuong1;
     }
 }
