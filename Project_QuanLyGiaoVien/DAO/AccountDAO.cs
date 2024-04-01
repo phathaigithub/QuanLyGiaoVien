@@ -48,7 +48,13 @@ namespace QuanLyLichDay.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
             return result.Rows[0]["User_Email"].ToString(); 
         }
-        
-        
+        public int getRank(string username, string email)
+        {
+            string query = "SELECT Rank FROM User_Info UI, Users WHERE Users.Username = @Username AND Users.User_ID = UI.User_ID " +
+                "AND Users.User_Email = @email";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, email });
+            int rank = Convert.ToInt32(result.Rows[0]["Rank"].ToString());
+            return rank;
+        }
     }
 }

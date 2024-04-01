@@ -20,16 +20,33 @@ namespace QuanLyLichDay.GUI
             InitializeComponent();
             this.account = account;
             loadUcXemLichDay();
+            loadUcTinhTienLuong();
         }
 
         private void xemLịchDạyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ucXemLichDay1.Show();
         }
         private void loadUcXemLichDay()
         {
             ucXemLichDay1.Account = account;
             ucXemLichDay1.loadWeek(ucXemLichDay1.CurrentWeek);
+            ucXemLichDay1.Hide();
+        }
+        private void loadUcTinhTienLuong()
+        {
+            ucTinhTienLuong1.Account = account;
+            ucTinhTienLuong1.Hide();
+        }
+
+        private void ucXemLichDay1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tínhToánTiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ucTinhTienLuong1.Show();   
         }
     }
 }

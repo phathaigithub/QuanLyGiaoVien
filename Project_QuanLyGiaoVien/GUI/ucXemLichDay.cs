@@ -84,5 +84,10 @@ namespace QuanLyLichDay.GUI
         {
             flp_Body.Controls.Clear();
         }
+
+        private void flp_Body_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

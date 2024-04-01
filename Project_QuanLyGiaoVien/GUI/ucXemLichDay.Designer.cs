@@ -182,6 +182,7 @@
             this.flp_Body.Name = "flp_Body";
             this.flp_Body.Size = new System.Drawing.Size(951, 502);
             this.flp_Body.TabIndex = 3;
+            this.flp_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Body_Paint);
             // 
             // lb_ThuHai
             // 
