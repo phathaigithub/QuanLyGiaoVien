@@ -28,169 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGetOTP = new System.Windows.Forms.Button();
-            this.txtOTP = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnDangNhap = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.lblMK = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox_Password = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox_Username = new System.Windows.Forms.TextBox();
+            this.bt_login = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel4
             // 
-            this.panel1.Controls.Add(this.btnGetOTP);
-            this.panel1.Controls.Add(this.txtOTP);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDangNhap);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(33, 30);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(521, 278);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.textBox_Password);
+            this.panel4.Location = new System.Drawing.Point(110, 280);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(257, 40);
+            this.panel4.TabIndex = 19;
             // 
-            // btnGetOTP
+            // textBox_Password
             // 
-            this.btnGetOTP.Location = new System.Drawing.Point(176, 231);
-            this.btnGetOTP.Name = "btnGetOTP";
-            this.btnGetOTP.Size = new System.Drawing.Size(154, 35);
-            this.btnGetOTP.TabIndex = 6;
-            this.btnGetOTP.Text = "Lấy OTP";
-            this.btnGetOTP.UseVisualStyleBackColor = true;
-            this.btnGetOTP.Click += new System.EventHandler(this.btnGetOTP_Click);
+            this.textBox_Password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_Password.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Password.Location = new System.Drawing.Point(9, 8);
+            this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.Size = new System.Drawing.Size(237, 24);
+            this.textBox_Password.TabIndex = 1;
             // 
-            // txtOTP
+            // panel5
             // 
-            this.txtOTP.Location = new System.Drawing.Point(308, 188);
-            this.txtOTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOTP.Name = "txtOTP";
-            this.txtOTP.Size = new System.Drawing.Size(179, 22);
-            this.txtOTP.TabIndex = 5;
-            this.txtOTP.TextChanged += new System.EventHandler(this.txtOTP_TextChanged);
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.textBox_Username);
+            this.panel5.Location = new System.Drawing.Point(110, 203);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(257, 40);
+            this.panel5.TabIndex = 18;
             // 
-            // label1
+            // textBox_Username
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 188);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Kiểm tra email và nhập OTP";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.textBox_Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_Username.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Username.Location = new System.Drawing.Point(9, 8);
+            this.textBox_Username.Margin = new System.Windows.Forms.Padding(30);
+            this.textBox_Username.Name = "textBox_Username";
+            this.textBox_Username.Size = new System.Drawing.Size(237, 24);
+            this.textBox_Username.TabIndex = 1;
             // 
-            // btnDangNhap
+            // bt_login
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(351, 229);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(137, 37);
-            this.btnDangNhap.TabIndex = 3;
-            this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.bt_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(78)))));
+            this.bt_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_login.FlatAppearance.BorderSize = 0;
+            this.bt_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_login.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_login.ForeColor = System.Drawing.Color.White;
+            this.bt_login.Location = new System.Drawing.Point(137, 342);
+            this.bt_login.Name = "bt_login";
+            this.bt_login.Size = new System.Drawing.Size(203, 37);
+            this.bt_login.TabIndex = 20;
+            this.bt_login.Text = "ĐĂNG NHẬP";
+            this.bt_login.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // label4
             // 
-            this.panel3.Controls.Add(this.txtMatKhau);
-            this.panel3.Controls.Add(this.lblMK);
-            this.panel3.Location = new System.Drawing.Point(19, 94);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(492, 62);
-            this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(114, 248);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 24);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Mật Khẩu";
             // 
-            // txtMatKhau
+            // label3
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(175, 20);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(291, 22);
-            this.txtMatKhau.TabIndex = 2;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(114, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 24);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Tên đăng nhập";
             // 
-            // lblMK
+            // label2
             // 
-            this.lblMK.AutoSize = true;
-            this.lblMK.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMK.Location = new System.Drawing.Point(3, 20);
-            this.lblMK.Name = "lblMK";
-            this.lblMK.Size = new System.Drawing.Size(132, 24);
-            this.lblMK.TabIndex = 1;
-            this.lblMK.Text = "Nhập mật khẩu:";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txtEmail);
-            this.panel2.Controls.Add(this.lblEmail);
-            this.panel2.Location = new System.Drawing.Point(19, 18);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 72);
-            this.panel2.TabIndex = 0;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(177, 21);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(291, 22);
-            this.txtEmail.TabIndex = 1;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(5, 21);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(101, 24);
-            this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Nhập email:";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(55, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(376, 39);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Ứng dụng hỗ trợ giảng viên";
             // 
             // fDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 338);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(784, 521);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.bt_login);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblMK;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtOTP;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnGetOTP;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox_Password;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBox_Username;
+        private System.Windows.Forms.Button bt_login;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
