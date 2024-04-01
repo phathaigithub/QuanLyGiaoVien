@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using QuanLyLichDay.GUI;
 using Project_DBManager.DAO;
 using Microsoft.Identity.Client;
+using QuanLyLichDay.DTO;
 
 namespace QuanLyLichDay.DAO
 {
@@ -32,6 +33,14 @@ namespace QuanLyLichDay.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
 
             return result.Rows.Count > 0;
+        }
+        public Account getAccountByUsername(string username)
+        {
+            string query = "SELECT * FROM Users as U WHERE U.Username = @Username";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            if (data.Rows.Count != 0)
+                return new Account(data.Rows[0]);
+            return null;
         }
         public string getEmailByUsername(string username)
         {

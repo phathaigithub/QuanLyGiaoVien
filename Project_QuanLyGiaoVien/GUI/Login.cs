@@ -64,20 +64,20 @@ namespace QuanLyLichDay
             }
             if (AccountDAO.Instance.checkLogin(username, password))
             {
-                OTPAuthorizeForm authForm = new OTPAuthorizeForm(username);
-                authForm.ShowDialog();
-                if (authForm.IsChecked)
-                {
-                    MainForm mainForm = new MainForm();
-                    this.Hide();
-                    mainForm.ShowDialog();
-                    this.Close();
+                //OTPAuthorizeForm authForm = new OTPAuthorizeForm(username);
+                //authForm.ShowDialog();
+                //if (authForm.IsChecked)
+                //{
+                MainForm mainForm = new MainForm(AccountDAO.Instance.getAccountByUsername(username));
+                this.Hide();
+                mainForm.ShowDialog();
+                this.Close();
 
-                }
-                else
-                {
-                    MessageBox.Show("Xác nhận không thành công");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Xác nhận không thành công");
+                //}
             }
             else
             {

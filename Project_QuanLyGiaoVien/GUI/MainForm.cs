@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyLichDay.DAO;
+using QuanLyLichDay.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,16 @@ namespace QuanLyLichDay.GUI
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private Account account;
+        public MainForm(Account account)
         {
             InitializeComponent();
+            this.account = account;
+        }
+
+        private void xemLịchDạyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

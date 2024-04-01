@@ -154,7 +154,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DateDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Class.cs" />
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +170,12 @@
     </Compile>
     <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ucXemLichDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ucXemLichDay.Designer.cs">
+      <DependentUpon>ucXemLichDay.cs</DependentUpon>
     </Compile>
     <Compile Include="OTPAuthorizeForm.cs">
       <SubType>Form</SubType>
@@ -180,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ucXemLichDay.resx">
+      <DependentUpon>ucXemLichDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OTPAuthorizeForm.resx">
       <DependentUpon>OTPAuthorizeForm.cs</DependentUpon>
@@ -208,9 +221,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\TĐT_logo.png" />
   </ItemGroup>
