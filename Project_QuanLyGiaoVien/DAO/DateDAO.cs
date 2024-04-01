@@ -22,7 +22,7 @@ namespace QuanLyLichDay.DAO
 
             int daysUntilMonday = ((int)DayOfWeek.Monday - (int)day.DayOfWeek + 7) % 7;
             DateTime firstDay = day.AddDays(-daysUntilMonday);
-            firstDay = firstDay.AddHours(-1 * firstDay.Hour);
+            firstDay = firstDay.AddHours(-1 * firstDay.Hour).AddMinutes(-1 * firstDay.Minute);
             return firstDay;
             
         }
@@ -30,7 +30,7 @@ namespace QuanLyLichDay.DAO
         {
             int daysUntilSunday = ((int)DayOfWeek.Sunday - (int)day.DayOfWeek + 7) % 7;
             DateTime lastDay = day.AddDays(daysUntilSunday);
-            lastDay = lastDay.AddHours(23 - lastDay.Hour);
+            lastDay = lastDay.AddHours(23 - lastDay.Hour).AddMinutes(59 - lastDay.Minute);
             return lastDay;
         }
     }
