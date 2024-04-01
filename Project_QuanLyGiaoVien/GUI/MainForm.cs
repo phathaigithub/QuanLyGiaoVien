@@ -22,9 +22,14 @@ namespace QuanLyLichDay.GUI
             loadUcXemLichDay();
             loadUcTinhTienLuong();
         }
-
+        public void collapseUserControl()
+        {
+            ucXemLichDay1.Hide();
+            ucTinhTienLuong1.Hide();
+        }
         private void xemLịchDạyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            collapseUserControl();
             ucXemLichDay1.Show();
         }
         private void loadUcXemLichDay()
@@ -46,6 +51,7 @@ namespace QuanLyLichDay.GUI
 
         private void tínhToánTiềnLươngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            collapseUserControl();
             ucTinhTienLuong1.Show();   
         }
     }

@@ -192,10 +192,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucTinhTienLuong.cs">
+    <Compile Include="GUI\ucTinhTienLuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTinhTienLuong.Designer.cs">
+    <Compile Include="GUI\ucTinhTienLuong.Designer.cs">
       <DependentUpon>ucTinhTienLuong.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\CaDay.resx">
@@ -223,7 +223,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucTinhTienLuong.resx">
+    <EmbeddedResource Include="GUI\ucTinhTienLuong.resx">
       <DependentUpon>ucTinhTienLuong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

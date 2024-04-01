@@ -12,7 +12,7 @@ namespace Project_DBManager.DAO
 {
     public class DataProvider
     {
-        private readonly string connectString = "Data Source =.\\PINOCHIO; Initial Catalog = QUANLYLICHDAY; Integrated Security = True";
+        private readonly string connectString = "Data Source =.\\sqlexpress; Initial Catalog = QUANLYLICHDAY; Integrated Security = True";
         private static DataProvider instance;
 
         public static DataProvider Instance
