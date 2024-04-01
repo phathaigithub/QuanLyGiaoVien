@@ -22,11 +22,10 @@ namespace QuanLyLichDay
         {
             InitializeComponent();
             this.username = username;
-            generateOTP();
         }
 
         public bool IsChecked { get => isChecked; set => isChecked = value; }
-        private void generateOTP()
+        public void generateOTP()
         {
             try
             {
@@ -82,6 +81,19 @@ namespace QuanLyLichDay
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OTPAuthorizeForm_Load(object sender, EventArgs e)
+        {
+            generateOTP();
+        }
+
+        private void tb_OTP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btn_KiemTraOTP.PerformClick();
+            }
         }
     }
 }

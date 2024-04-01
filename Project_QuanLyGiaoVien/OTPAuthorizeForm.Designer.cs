@@ -45,7 +45,7 @@
             this.pn_NhapOTP.Location = new System.Drawing.Point(272, 221);
             this.pn_NhapOTP.Name = "pn_NhapOTP";
             this.pn_NhapOTP.Size = new System.Drawing.Size(257, 40);
-            this.pn_NhapOTP.TabIndex = 23;
+            this.pn_NhapOTP.TabIndex = 1;
             // 
             // tb_OTP
             // 
@@ -56,6 +56,7 @@
             this.tb_OTP.Name = "tb_OTP";
             this.tb_OTP.Size = new System.Drawing.Size(237, 24);
             this.tb_OTP.TabIndex = 1;
+            this.tb_OTP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_OTP_KeyDown);
             // 
             // lb_NhapOTP
             // 
@@ -75,11 +76,10 @@
             // 
             // lb_YourOTP
             // 
-            this.lb_YourOTP.AutoSize = true;
             this.lb_YourOTP.BackColor = System.Drawing.Color.White;
             this.lb_YourOTP.Font = new System.Drawing.Font("Calibri", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_YourOTP.ForeColor = System.Drawing.Color.Red;
-            this.lb_YourOTP.Location = new System.Drawing.Point(125, 82);
+            this.lb_YourOTP.ForeColor = System.Drawing.Color.Green;
+            this.lb_YourOTP.Location = new System.Drawing.Point(116, 77);
             this.lb_YourOTP.Name = "lb_YourOTP";
             this.lb_YourOTP.Size = new System.Drawing.Size(555, 49);
             this.lb_YourOTP.TabIndex = 25;
@@ -142,6 +142,7 @@
             this.Controls.Add(this.lb_NhapOTP);
             this.Name = "OTPAuthorizeForm";
             this.Text = "OTPAuthorize";
+            this.Load += new System.EventHandler(this.OTPAuthorizeForm_Load);
             this.pn_NhapOTP.ResumeLayout(false);
             this.pn_NhapOTP.PerformLayout();
             this.ResumeLayout(false);
