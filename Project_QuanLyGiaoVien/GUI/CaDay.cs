@@ -117,6 +117,7 @@ namespace QuanLyLichDay
         private void cb_Status_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
+            this.status = cb_Status.SelectedItem.ToString();
             CaDayDAO.Instance.updateStatusCaDay(className, status, shift, day, account.Username);
             
         }
