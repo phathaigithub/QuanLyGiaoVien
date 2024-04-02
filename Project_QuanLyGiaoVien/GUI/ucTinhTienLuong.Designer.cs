@@ -178,6 +178,7 @@
             this.cbBacLuong.Name = "cbBacLuong";
             this.cbBacLuong.Size = new System.Drawing.Size(131, 37);
             this.cbBacLuong.TabIndex = 11;
+            this.cbBacLuong.SelectedIndex = 1;
             this.cbBacLuong.SelectedIndexChanged += new System.EventHandler(this.cbBacLuong_SelectedIndexChanged);
             // 
             // label5

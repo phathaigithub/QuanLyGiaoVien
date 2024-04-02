@@ -22,12 +22,21 @@ namespace QuanLyLichDay.GUI
             loadUcXemLichDay();
             loadUcTinhTienLuong();
             loadUcBaoCaoThongKe();
+            loadUcThongTin();
+            collapseUserControl();
+            ucThongTin1.Show();
         }
         public void collapseUserControl()
         {
             ucXemLichDay1.Hide();
             ucTinhTienLuong1.Hide();
             ucThongKeBaoCao1.Hide();
+            ucThongTin1.Hide();
+        }
+        private void loadUcThongTin()
+        {
+            ucThongTin1.Account = this.account;
+            ucThongTin1.loadInformation(ucThongTin1.Account.Username);
         }
         private void loadUcXemLichDay()
         {
@@ -84,15 +93,16 @@ namespace QuanLyLichDay.GUI
 
         }
 
-        private void xemThôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            collapseUserControl();
-        }
-
         private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
             collapseUserControl();
             ucXemLichDay1.Show();
+        }
+
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucThongTin1.Show();
         }
     }
 }

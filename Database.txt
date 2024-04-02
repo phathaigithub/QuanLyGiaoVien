@@ -14,8 +14,8 @@ CREATE TABLE User_Info (
     Birth DATE,
     Gender NVARCHAR(4),
     Address NVARCHAR(255),
-    CCCD VARCHAR(20),
-    PhoneNum VARCHAR(10),
+    CCCD VARCHAR(100),
+    PhoneNum VARCHAR(100),
 	Rank TINYINT DEFAULT 1,
     FOREIGN KEY (User_ID) REFERENCES Users(User_ID)
 );
@@ -38,11 +38,6 @@ INSERT INTO Shift VALUES
 	('12:45:00', '15:15:00'),
 	('15:25:00', '17:55:00'),
 	('18:05:00', '20:35:00')
-SELECT Class_Name, Shift_ID, FORMAT(DayOfClass, 'yyyy-MM-dd') as Day, Status
-                            FROM Users U, (SELECT * from Class Where DayOfClass >= '01-04-2024' AND DayOfClass <= '15-04-2024' ) as Class
-                            WHERE U.User_ID = Class.User_ID and U.Username = 'admin'
-SELECT * FROM Users
-SELECT * FROM Class
-DELETE FROM CLASS
-WHERE Class_Name = N'Thiết kế web' AND Shift_ID = 2 AND DayOfClass = '05-05-2024' AND User_ID = (SELECT User_ID From Users WHERE Username = 'admin')
 
+SELECT * FROM Users
+SELECT * from User_Info

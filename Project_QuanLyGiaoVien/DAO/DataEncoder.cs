@@ -10,7 +10,6 @@ namespace QuanLyLichDay.DAO
     public class DataEncoder
     {
         private static DataEncoder instance;
-        string salt = "HoTroGV";
 
         public static DataEncoder Instance { get => instance == null ? new DataEncoder(): instance; set => instance = value; }
 

@@ -163,7 +163,6 @@
   <ItemGroup>
     <Compile Include="DAO\CaDayDAO.cs" />
     <Compile Include="DAO\DataEncoder.cs" />
-    <Compile Include="DAO\InforDAO.cs" />
     <Compile Include="GUI\CaDay.cs">
       <SubType>UserControl</SubType>
     </Compile>

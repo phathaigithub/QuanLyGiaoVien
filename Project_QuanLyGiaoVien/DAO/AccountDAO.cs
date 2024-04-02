@@ -91,10 +91,19 @@ namespace QuanLyLichDay.DAO
             }
             return null;
         }
-
-        //public string setNameByID(int userID, string name)
-        //{
-        //    string query = string.Format("UPDATE User_Info SET Name = ")
-        //}
+        public DataRow getUserInfoByUsername(string username)
+        {
+            string query = "SELECT * From User_Info WHERE User_ID = (SELECT User_ID FROM Users WHERE Username = @Username )";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { username });
+            return table.Rows[0];
+        }
+        public bool insertUserInfoByUsername(string username, string hoTen, string cccd, string sdt, string diaChi, string gioiTinh, string ngaySinh)
+        {
+            cccd = DataEncoder.Instance.encodeBase64(cccd);
+            sdt = DataEncoder.Instance.encodeBase64(sdt);
+            diaChi = DataEncoder.Instance.encodeBase64(diaChi);
+            string query = string.Format("UPDATE User_Info SET Name = N'{1}', Birth = '{6}', Gender = N'{5}', Address = N'{4}', CCCD = '{2}', PhoneNum = '{3}' WHERE User_ID = (SELECT User_ID From Users WHERE Username = '{0}')", username, hoTen, cccd, sdt, diaChi, gioiTinh, ngaySinh);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
     }
 }
