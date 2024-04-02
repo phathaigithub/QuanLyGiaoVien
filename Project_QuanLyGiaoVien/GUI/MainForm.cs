@@ -88,5 +88,10 @@ namespace QuanLyLichDay.GUI
         {
 
         }
+
+        private void xemThôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+        }
     }
 }
