@@ -72,7 +72,7 @@ namespace QuanLyLichDay.DAO
 
         public int totalShiftInDay(string day)
         {
-            string query = "SET DATEFORMAT DMY SELECT COUNT(*) FROM Class WHERE DayOfClass = @day";
+            string query = "SELECT COUNT(*) FROM Class WHERE DayOfClass = @day";
             DataTable table = DataProvider.Instance.ExecuteQuery (query, new object[] { day });
             if (table != null)
             {
