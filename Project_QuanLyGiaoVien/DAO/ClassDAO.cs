@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace QuanLyLichDay.DAO
 {
@@ -45,6 +46,40 @@ namespace QuanLyLichDay.DAO
             return 0;
         }
 
+        public int totalShiftInMonth(int userid, string fromDate, string toDate)
+        {
+            string query = "SET DATEFORMAT DMY SELECT COUNT(*) FROM Class WHERE User_ID = @userid AND DayOfClass >= @fromDate AND DayOfClass <= @toDate";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userid, fromDate, toDate});
+            if (result != null)
+            {
+                int totalShift = Convert.ToInt32(result.Rows[0][0].ToString());
+                return totalShift;
+            }
+            return 0;
+        }
 
+        public List<Class> getClasses(int userid)
+        {
+            string query = "SELECT Class_Name, Shift_ID, FORMAT(DayOfClass, 'yyyy-MM-dd') as Day, Status FROM Class WHERE User_ID = @User_ID";
+            List<Class> classes = new List<Class>();
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { userid });
+            foreach (DataRow row in table.Rows)
+            {
+                classes.Add(new Class(row));
+            }
+            return classes;
+        }
+
+        public int totalShiftInDay(string day)
+        {
+            string query = "SET DATEFORMAT DMY SELECT COUNT(*) FROM Class WHERE DayOfClass = @day";
+            DataTable table = DataProvider.Instance.ExecuteQuery (query, new object[] { day });
+            if (table != null)
+            {
+                int totalShift = Convert.ToInt32(table.Rows[0][0].ToString());
+                return totalShift;
+            }
+            return 0;
+        }
     }
 }

@@ -294,6 +294,7 @@
             this.Controls.Add(this.pn_DateDisplay);
             this.Name = "ucXemLichDay";
             this.Size = new System.Drawing.Size(1100, 606);
+            this.Load += new System.EventHandler(this.ucXemLichDay_Load);
             this.pn_DateDisplay.ResumeLayout(false);
             this.pn_DateDisplay.PerformLayout();
             this.flp_Shift.ResumeLayout(false);

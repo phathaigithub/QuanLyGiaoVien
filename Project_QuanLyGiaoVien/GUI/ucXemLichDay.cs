@@ -89,5 +89,10 @@ namespace QuanLyLichDay.GUI
         {
 
         }
+
+        private void ucXemLichDay_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
