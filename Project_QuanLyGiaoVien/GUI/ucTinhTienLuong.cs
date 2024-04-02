@@ -75,5 +75,25 @@ namespace QuanLyLichDay
             string format = string.Format("{0:N}", luong); // 1.000.000.00
             labelHienTienLuongTC.Text = format + " VNĐ";
         }
+
+        private void panelTinhLuongMacDinh_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tbSoCaDay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbBacLuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucTinhTienLuong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

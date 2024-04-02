@@ -12,6 +12,7 @@ namespace QuanLyLichDay.DTO
     {
         private string username;
         private string email;
+        private int id;
         public Account()
         {
             this.username = null;
@@ -21,6 +22,7 @@ namespace QuanLyLichDay.DTO
         {
             username = row["Username"].ToString();
             email = row["User_Email"].ToString();
+            id = int.Parse(row["User_ID"].ToString());
         }
         public Account(Account account)
         {
@@ -30,5 +32,6 @@ namespace QuanLyLichDay.DTO
 
         public string Username { get => username; set => username = value; }
         public string Email { get => email; set => email = value; }
+        public int Id { get => id; set => id = value; }
     }
 }

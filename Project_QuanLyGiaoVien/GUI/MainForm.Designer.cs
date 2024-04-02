@@ -36,8 +36,9 @@
             this.xemLịchDạyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tínhToánTiềnLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêBáoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ucXemLichDay1 = new QuanLyLichDay.GUI.ucXemLichDay();
             this.ucTinhTienLuong1 = new QuanLyLichDay.ucTinhTienLuong();
+            this.ucXemLichDay1 = new QuanLyLichDay.GUI.ucXemLichDay();
+            this.ucThongKeBaoCao1 = new QuanLyLichDay.GUI.ucThongKeBaoCao();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1101, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // quảnLýTàiKhoảnToolStripMenuItem
             // 
@@ -104,6 +106,15 @@
             this.thốngKêBáoCáoToolStripMenuItem.Name = "thốngKêBáoCáoToolStripMenuItem";
             this.thốngKêBáoCáoToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.thốngKêBáoCáoToolStripMenuItem.Text = "Thống kê & báo cáo";
+            this.thốngKêBáoCáoToolStripMenuItem.Click += new System.EventHandler(this.thốngKêBáoCáoToolStripMenuItem_Click);
+            // 
+            // ucTinhTienLuong1
+            // 
+            this.ucTinhTienLuong1.Account = null;
+            this.ucTinhTienLuong1.Location = new System.Drawing.Point(0, 27);
+            this.ucTinhTienLuong1.Name = "ucTinhTienLuong1";
+            this.ucTinhTienLuong1.Size = new System.Drawing.Size(1100, 606);
+            this.ucTinhTienLuong1.TabIndex = 2;
             // 
             // ucXemLichDay1
             // 
@@ -116,19 +127,20 @@
             this.ucXemLichDay1.TabIndex = 1;
             this.ucXemLichDay1.Load += new System.EventHandler(this.ucXemLichDay1_Load);
             // 
-            // ucTinhTienLuong1
+            // ucThongKeBaoCao1
             // 
-            this.ucTinhTienLuong1.Account = null;
-            this.ucTinhTienLuong1.Location = new System.Drawing.Point(0, 27);
-            this.ucTinhTienLuong1.Name = "ucTinhTienLuong1";
-            this.ucTinhTienLuong1.Size = new System.Drawing.Size(1100, 606);
-            this.ucTinhTienLuong1.TabIndex = 2;
+            this.ucThongKeBaoCao1.Location = new System.Drawing.Point(0, 27);
+            this.ucThongKeBaoCao1.Name = "ucThongKeBaoCao1";
+            this.ucThongKeBaoCao1.Size = new System.Drawing.Size(1100, 606);
+            this.ucThongKeBaoCao1.TabIndex = 3;
+            this.ucThongKeBaoCao1.Load += new System.EventHandler(this.ucThongKeBaoCao1_Load);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 633);
+            this.Controls.Add(this.ucThongKeBaoCao1);
             this.Controls.Add(this.ucTinhTienLuong1);
             this.Controls.Add(this.ucXemLichDay1);
             this.Controls.Add(this.menuStrip1);
@@ -137,6 +149,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePage";
+            this.Load += new System.EventHandler(this.MainForm_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -156,5 +169,6 @@
         private System.Windows.Forms.ToolStripMenuItem xemLịchDạyToolStripMenuItem;
         private ucXemLichDay ucXemLichDay1;
         private ucTinhTienLuong ucTinhTienLuong1;
+        private ucThongKeBaoCao ucThongKeBaoCao1;
     }
 }
