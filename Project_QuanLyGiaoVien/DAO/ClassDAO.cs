@@ -48,7 +48,7 @@ namespace QuanLyLichDay.DAO
 
         public int totalShiftInMonth(int userid, string fromDate, string toDate)
         {
-            string query = "SET DATEFORMAT DMY SELECT COUNT(*) FROM Class WHERE User_ID = @userid AND DayOfClass >= @fromDate AND DayOfClass <= @toDate";
+            string query = "SELECT COUNT(*) FROM Class WHERE User_ID = @userid AND DayOfClass >= @fromDate AND DayOfClass <= @toDate";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userid, fromDate, toDate});
             if (result != null)
             {

@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pbLoginImage = new System.Windows.Forms.PictureBox();
+            this.btn_DangKy = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginImage)).BeginInit();
@@ -157,12 +158,27 @@
             this.pbLoginImage.TabIndex = 24;
             this.pbLoginImage.TabStop = false;
             // 
+            // btn_DangKy
+            // 
+            this.btn_DangKy.BackColor = System.Drawing.Color.White;
+            this.btn_DangKy.FlatAppearance.BorderSize = 0;
+            this.btn_DangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DangKy.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangKy.Location = new System.Drawing.Point(466, 416);
+            this.btn_DangKy.Name = "btn_DangKy";
+            this.btn_DangKy.Size = new System.Drawing.Size(203, 24);
+            this.btn_DangKy.TabIndex = 25;
+            this.btn_DangKy.Text = "ĐĂNG KÝ";
+            this.btn_DangKy.UseVisualStyleBackColor = false;
+            this.btn_DangKy.Click += new System.EventHandler(this.btn_DangKy_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(209)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(784, 521);
+            this.Controls.Add(this.btn_DangKy);
             this.Controls.Add(this.pbLoginImage);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
@@ -194,6 +210,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbLoginImage;
+        private System.Windows.Forms.Button btn_DangKy;
     }
 }
 

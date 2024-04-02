@@ -141,7 +141,7 @@
             this.btn_XuatDuLieu.TabIndex = 20;
             this.btn_XuatDuLieu.Text = "Xuất dữ liệu";
             this.btn_XuatDuLieu.UseVisualStyleBackColor = true;
-            this.btn_XuatDuLieu.Click += new System.EventHandler(this.button1_Click_2);
+            this.btn_XuatDuLieu.Click += new System.EventHandler(this.btn_XuatDuKieu_Click);
             // 
             // btn_HienThiThongTin
             // 
@@ -152,7 +152,7 @@
             this.btn_HienThiThongTin.TabIndex = 14;
             this.btn_HienThiThongTin.Text = "Hiển thị dữ liệu";
             this.btn_HienThiThongTin.UseVisualStyleBackColor = true;
-            this.btn_HienThiThongTin.Click += new System.EventHandler(this.button2_Click);
+            this.btn_HienThiThongTin.Click += new System.EventHandler(this.btn_HienThi_Click);
             // 
             // panel1
             // 

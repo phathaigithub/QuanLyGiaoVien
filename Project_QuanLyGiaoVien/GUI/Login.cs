@@ -95,5 +95,11 @@ namespace QuanLyLichDay
                 bt_login.PerformClick();
             }
         }
+
+        private void btn_DangKy_Click(object sender, EventArgs e)
+        {
+            RegisterForm regForm = new RegisterForm();
+            regForm.Show();
+        }
     }
 }

@@ -166,7 +166,7 @@ namespace QuanLyLichDay.GUI
             dataGridView1.DataSource = dt;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_HienThi_Click(object sender, EventArgs e)
         {
             thongKe();
         }
@@ -209,7 +209,7 @@ namespace QuanLyLichDay.GUI
             }
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void btn_XuatDuKieu_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn muốn xuất dữ liệu thành file Excel?", "Export", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)

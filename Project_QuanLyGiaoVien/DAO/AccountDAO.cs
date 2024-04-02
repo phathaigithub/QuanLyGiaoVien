@@ -11,6 +11,7 @@ using QuanLyLichDay.GUI;
 using Project_DBManager.DAO;
 using Microsoft.Identity.Client;
 using QuanLyLichDay.DTO;
+using System.Windows.Forms;
 
 namespace QuanLyLichDay.DAO
 {
@@ -18,6 +19,7 @@ namespace QuanLyLichDay.DAO
     {
         private static AccountDAO instance;
         private static Account acc;
+        
         public static AccountDAO Instance
         {
             get => instance == null ? new AccountDAO() : instance;
@@ -26,14 +28,34 @@ namespace QuanLyLichDay.DAO
         public static Account Acc { get => acc; set => acc = value; }
 
         private AccountDAO() { }
+        public bool isExistUsernameAndEmail(string username, string email)
+        {
+            string query = string.Format("SELECT* FROM Users WHERE Username = '{0}' or User_Email = '{1}'", username, email);
+            return DataProvider.Instance.ExecuteQuery(query).Rows.Count > 0;
+
+        }
+        public bool regAccount(string username, string password, string email)
+        {
+            password = DataEncoder.Instance.stringHash(password);
+            string queryUser = string.Format("INSERT INTO Users (Username, Password, User_Email) VALUES ('{0}', '{1}', '{2}')", username, password, email);
+            string queryUserInfo = "INSERT INTO User_Info(User_ID) VALUES ((SELECT User_ID FROM Users WHERE Username = @Username ))";
+            bool insertUser = DataProvider.Instance.ExecuteNonQuery(queryUser) > 0;
+            bool insertUserInfo = DataProvider.Instance.ExecuteNonQuery(queryUserInfo, new object[] {username}) > 0;
+            return insertUser && insertUserInfo;
+        }
 
         public bool checkLogin(string username, string password)
         {
-            string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
+            string query = "SELECT * FROM Users WHERE Username = @Username";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] {username});
+            if(table.Rows.Count == 0)
+            {
+                return false;
+            }
+            DataRow row = table.Rows[0];
+            string hashedPassword = row["Password"].ToString();
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
-
-            return result.Rows.Count > 0;
+            return DataEncoder.Instance.isHashTo(password, hashedPassword);
         }
         public Account getAccountByUsername(string username)
         {
