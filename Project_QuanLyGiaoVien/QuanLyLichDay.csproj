@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="DAO\CaDayDAO.cs" />
     <Compile Include="DAO\DataEncoder.cs" />
+    <Compile Include="DAO\InforDAO.cs" />
     <Compile Include="GUI\CaDay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +193,12 @@
     </Compile>
     <Compile Include="GUI\ucThongKeBaoCao.Designer.cs">
       <DependentUpon>ucThongKeBaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ucThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ucThongTin.Designer.cs">
+      <DependentUpon>ucThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ucXemLichDay.cs">
       <SubType>UserControl</SubType>
@@ -230,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucThongKeBaoCao.resx">
       <DependentUpon>ucThongKeBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ucThongTin.resx">
+      <DependentUpon>ucThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucXemLichDay.resx">
       <DependentUpon>ucXemLichDay.cs</DependentUpon>

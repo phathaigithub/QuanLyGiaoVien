@@ -91,5 +91,10 @@ namespace QuanLyLichDay.DAO
             }
             return null;
         }
+
+        //public string setNameByID(int userID, string name)
+        //{
+        //    string query = string.Format("UPDATE User_Info SET Name = ")
+        //}
     }
 }
