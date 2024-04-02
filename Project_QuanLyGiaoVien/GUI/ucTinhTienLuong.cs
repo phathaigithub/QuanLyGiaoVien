@@ -95,5 +95,10 @@ namespace QuanLyLichDay
         {
 
         }
+
+        private void panelTuyChon_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

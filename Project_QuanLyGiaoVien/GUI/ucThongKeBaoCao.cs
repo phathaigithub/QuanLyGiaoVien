@@ -233,5 +233,10 @@ namespace QuanLyLichDay.GUI
         {
 
         }
+
+        private void pn_BaoCao_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
