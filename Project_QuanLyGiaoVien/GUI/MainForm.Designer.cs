@@ -33,7 +33,6 @@
             this.xemThôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xemThônToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xemLịchDạyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tínhToánTiềnLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêBáoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ucTinhTienLuong1 = new QuanLyLichDay.ucTinhTienLuong();
@@ -81,18 +80,10 @@
             // 
             // quảnLýToolStripMenuItem
             // 
-            this.quảnLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xemLịchDạyToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.quảnLýToolStripMenuItem.Text = "Quản lý thời gian dạy";
-            // 
-            // xemLịchDạyToolStripMenuItem
-            // 
-            this.xemLịchDạyToolStripMenuItem.Name = "xemLịchDạyToolStripMenuItem";
-            this.xemLịchDạyToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.xemLịchDạyToolStripMenuItem.Text = "Xem lịch dạy";
-            this.xemLịchDạyToolStripMenuItem.Click += new System.EventHandler(this.xemLịchDạyToolStripMenuItem_Click);
+            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // tínhToánTiềnLươngToolStripMenuItem
             // 
@@ -129,6 +120,7 @@
             // 
             // ucThongKeBaoCao1
             // 
+            this.ucThongKeBaoCao1.Account = null;
             this.ucThongKeBaoCao1.Location = new System.Drawing.Point(0, 27);
             this.ucThongKeBaoCao1.Name = "ucThongKeBaoCao1";
             this.ucThongKeBaoCao1.Size = new System.Drawing.Size(1100, 606);
@@ -166,7 +158,6 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tínhToánTiềnLươngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêBáoCáoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xemLịchDạyToolStripMenuItem;
         private ucXemLichDay ucXemLichDay1;
         private ucTinhTienLuong ucTinhTienLuong1;
         private ucThongKeBaoCao ucThongKeBaoCao1;

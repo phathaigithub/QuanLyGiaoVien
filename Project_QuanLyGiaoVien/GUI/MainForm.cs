@@ -29,11 +29,6 @@ namespace QuanLyLichDay.GUI
             ucTinhTienLuong1.Hide();
             ucThongKeBaoCao1.Hide();
         }
-        private void xemLịchDạyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            collapseUserControl();
-            ucXemLichDay1.Show();
-        }
         private void loadUcXemLichDay()
         {
             ucXemLichDay1.Account = account;
@@ -87,6 +82,12 @@ namespace QuanLyLichDay.GUI
         private void ucThongKeBaoCao1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            collapseUserControl();
+            ucXemLichDay1.Show();
         }
     }
 }

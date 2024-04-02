@@ -47,6 +47,7 @@
             this.lb_ThuSau = new System.Windows.Forms.Label();
             this.lb_ThuBay = new System.Windows.Forms.Label();
             this.lb_ChuNhat = new System.Windows.Forms.Label();
+            this.dtpk_ChonTuan = new System.Windows.Forms.DateTimePicker();
             this.pn_DateDisplay.SuspendLayout();
             this.flp_Shift.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -55,6 +56,7 @@
             // pn_DateDisplay
             // 
             this.pn_DateDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(199)))), ((int)(((byte)(208)))));
+            this.pn_DateDisplay.Controls.Add(this.dtpk_ChonTuan);
             this.pn_DateDisplay.Controls.Add(this.btn_NextWeek);
             this.pn_DateDisplay.Controls.Add(this.btn_PrevWeek);
             this.pn_DateDisplay.Controls.Add(this.lb_Week);
@@ -283,6 +285,18 @@
             this.lb_ChuNhat.Text = "Chủ nhật\r\n(07/04)";
             this.lb_ChuNhat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dtpk_ChonTuan
+            // 
+            this.dtpk_ChonTuan.CalendarForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtpk_ChonTuan.CustomFormat = "dd/MM/yyyy";
+            this.dtpk_ChonTuan.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpk_ChonTuan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpk_ChonTuan.Location = new System.Drawing.Point(461, 15);
+            this.dtpk_ChonTuan.Name = "dtpk_ChonTuan";
+            this.dtpk_ChonTuan.Size = new System.Drawing.Size(123, 27);
+            this.dtpk_ChonTuan.TabIndex = 3;
+            this.dtpk_ChonTuan.CloseUp += new System.EventHandler(this.dtpk_ChonTuan_CloseUp);
+            // 
             // ucXemLichDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +337,6 @@
         private System.Windows.Forms.Label lb_ThuSau;
         private System.Windows.Forms.Label lb_ThuBay;
         private System.Windows.Forms.Label lb_ChuNhat;
+        private System.Windows.Forms.DateTimePicker dtpk_ChonTuan;
     }
 }

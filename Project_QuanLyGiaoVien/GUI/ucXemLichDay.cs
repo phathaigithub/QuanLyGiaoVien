@@ -94,5 +94,10 @@ namespace QuanLyLichDay.GUI
         {
 
         }
+
+        private void dtpk_ChonTuan_CloseUp(object sender, EventArgs e)
+        {
+            loadWeek(dtpk_ChonTuan.Value.Date);
+        }
     }
 }
