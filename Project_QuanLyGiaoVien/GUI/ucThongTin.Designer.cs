@@ -118,6 +118,7 @@
             this.dtpk_Ngaysinh.Location = new System.Drawing.Point(125, 132);
             this.dtpk_Ngaysinh.Margin = new System.Windows.Forms.Padding(2);
             this.dtpk_Ngaysinh.Name = "dtpk_Ngaysinh";
+            this.dtpk_Ngaysinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpk_Ngaysinh.Size = new System.Drawing.Size(110, 24);
             this.dtpk_Ngaysinh.TabIndex = 11;
             this.dtpk_Ngaysinh.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);

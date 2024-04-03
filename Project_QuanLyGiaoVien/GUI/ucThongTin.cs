@@ -44,6 +44,16 @@ namespace QuanLyLichDay.GUI
             lb_CCCD.Text = DataEncoder.Instance.decodeBase64(userInfo["CCCD"].ToString());
             lb_SDT.Text = DataEncoder.Instance.decodeBase64(userInfo["PhoneNum"].ToString());
             lb_DiaChi.Text = DataEncoder.Instance.decodeBase64(userInfo["Address"].ToString());
+            tb_TenGV.Text = userInfo["Name"].ToString();
+            switch (userInfo["Gender"].ToString())
+            {
+                case "Nam": rbtn_Nam.Checked = true; break;
+                case "Nữ": rbtn_Nu.Checked = true; break;
+            }
+            dtpk_Ngaysinh.Value = Convert.ToDateTime(userInfo["Birth"]);
+            tb_CCCD.Text = DataEncoder.Instance.decodeBase64(userInfo["CCCD"].ToString());
+            tb_SDT.Text = DataEncoder.Instance.decodeBase64(userInfo["PhoneNum"].ToString());
+            tb_DiaChi.Text = DataEncoder.Instance.decodeBase64(userInfo["Address"].ToString());
         }
 
         private void label6_Click(object sender, EventArgs e)
