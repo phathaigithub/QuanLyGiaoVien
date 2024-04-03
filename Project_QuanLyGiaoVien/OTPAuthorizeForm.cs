@@ -41,7 +41,7 @@ namespace QuanLyLichDay
                 message.From = new MailAddress(mailSender);
                 message.Subject = "OTP Verify";
                 message.To.Add(new MailAddress(mailReceiver));
-                message.Body = "<html><body>" + OTP + " </body></html>";
+                message.Body = "<html><body>Your OTP is: " + OTP + " </body></html>";
                 message.IsBodyHtml = true;
 
                 var stmpClient = new SmtpClient("smtp.gmail.com")
@@ -85,7 +85,7 @@ namespace QuanLyLichDay
 
         private void OTPAuthorizeForm_Load(object sender, EventArgs e)
         {
-            generateOTP();
+            
         }
 
         private void tb_OTP_KeyDown(object sender, KeyEventArgs e)

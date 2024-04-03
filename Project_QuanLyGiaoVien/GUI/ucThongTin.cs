@@ -34,7 +34,7 @@ namespace QuanLyLichDay.GUI
             DataRow userInfo = AccountDAO.Instance.getUserInfoByUsername(username);
             if (userInfo.IsNull("Name")) { userInfo.SetField("Name", "Không có"); }
             if (userInfo.IsNull("Gender")) { userInfo.SetField("Gender", "Không có"); }
-            if (userInfo.IsNull("Birth")) { userInfo.SetField("Birth", DateTime.MinValue); }
+            if (userInfo.IsNull("Birth")) { userInfo.SetField("Birth", DateTime.Parse("01/01/1753")); }
             if (userInfo.IsNull("CCCD")) { userInfo.SetField("CCCD", DataEncoder.Instance.encodeBase64("Không có")); }
             if (userInfo.IsNull("PhoneNum")) { userInfo.SetField("PhoneNum", DataEncoder.Instance.encodeBase64("Không có")); }
             if (userInfo.IsNull("Address")) { userInfo.SetField("Address", DataEncoder.Instance.encodeBase64("Không có")); }

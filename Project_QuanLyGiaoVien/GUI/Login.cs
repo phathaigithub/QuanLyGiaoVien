@@ -60,26 +60,31 @@ namespace QuanLyLichDay
 
             if (username == "" || password == "")
             {
-                MessageBox.Show("Email hoặc mật khẩu không được để trống");
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không được để trống");
                 return;
             }
             if (AccountDAO.Instance.checkLogin(username, password))
             {
-                //OTPAuthorizeForm authForm = new OTPAuthorizeForm(username);
-                //authForm.ShowDialog();
-                //if (authForm.IsChecked)
-                //{
-                MainForm mainForm = new MainForm(AccountDAO.Instance.getAccountByUsername(username));
-                AccountDAO.Acc = AccountDAO.Instance.getAccountByUsername(username);
-                this.Hide();
-                mainForm.ShowDialog();
-                this.Close();
-
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Xác nhận không thành công");
-                //}
+                OTPAuthorizeForm authForm = new OTPAuthorizeForm(username);
+                authForm.Show();
+                authForm.generateOTP();
+                authForm.FormClosed += (s, args) =>
+                {
+                    if (authForm.IsChecked)
+                    {
+                        authForm.Hide();
+                        MainForm mainForm = new MainForm(AccountDAO.Instance.getAccountByUsername(username));
+                        AccountDAO.Acc = AccountDAO.Instance.getAccountByUsername(username);
+                        this.Hide();
+                        mainForm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xác nhận không thành công");
+                    }
+                };
+                
             }
             else
             {
