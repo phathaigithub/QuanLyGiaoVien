@@ -19,13 +19,25 @@ namespace QuanLyLichDay.DAO
         public List<Class> getClassesByWeekAndUsername(string username, DateTime day)
         {
             string monday = DateDAO.Instance.firstDayOfWeek(day).ToString("yyyy-MM-dd");
-            string sunday= DateDAO.Instance.lastDayOfWeek(day).ToString("yyyy-MM-dd");
+            string sunday = DateDAO.Instance.lastDayOfWeek(day).ToString("yyyy-MM-dd");
             string query = "SELECT Class_Name, Shift_ID, FORMAT(DayOfClass, 'yyyy-MM-dd') as Day, Status " +
                 "FROM Users U, (SELECT * from Class Where DayOfClass >= @Monday AND DayOfClass <= @Sunday ) as Class " +
                 "WHERE U.User_ID = Class.User_ID and U.Username = @Username";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { monday, sunday, username});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { monday, sunday, username });
             List<Class> classes = new List<Class>();
-            foreach(DataRow row in result.Rows)
+            foreach (DataRow row in result.Rows)
+            {
+                classes.Add(new Class(row));
+            }
+            return classes;
+        }
+        public List<Class> getClassesByDayAndUsername(string username, DateTime day)
+        {
+            string dayString = day.ToString("MM-dd-yyyy");
+            string query = "SELECT Class_Name, Shift_ID, FORMAT(DayOfClass, 'yyyy-MM-dd') as Day, Status From Class WHERE User_ID = (SELECT User_ID From Users WHERE Username = @username ) AND DayOfClass = @day";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, dayString });
+            List<Class> classes = new List<Class>();
+            foreach (DataRow row in result.Rows)
             {
                 classes.Add(new Class(row));
             }

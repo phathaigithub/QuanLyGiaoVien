@@ -6,9 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace QuanLyLichDay.GUI
 {
@@ -25,6 +28,44 @@ namespace QuanLyLichDay.GUI
             loadUcThongTin();
             collapseUserControl();
             ucThongTin1.Show();
+            sendNotiMail();
+        }
+        public void sendNotiMail()
+        {
+            List<Class> list = ClassDAO.Instance.getClassesByDayAndUsername(account.Username, DateTime.Today.AddDays(1));
+            if (list.Count == 0)
+                return;
+            string classListText = "";
+            foreach (Class c in list)
+            {
+                classListText += "Lớp: " + c.ClassName + " | Ca: " + c.Shift + "<br>";
+            }
+            try
+            {
+                Random rd = new Random();
+                string mailSender = "dbmanagerteam@gmail.com";
+                string fromPassword = "xvlsxthynqyrdvut";
+                string mailReceiver = account.Email;
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(mailSender);
+                message.Subject = "Thông báo ca học";
+                message.To.Add(new MailAddress(mailReceiver));
+                message.Body = string.Format("<html><body>Bạn có các da dạy vào ngày mai ({0}): <br>{1}</body></html>",DateTime.Today.AddDays(1).ToString("dd/MM"), classListText);
+                message.IsBodyHtml = true;
+
+                var stmpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential(mailSender, fromPassword),
+                    EnableSsl = true,
+                };
+
+                stmpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void collapseUserControl()
         {
